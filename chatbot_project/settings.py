@@ -23,7 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-o4ie*4v8d5uy58rf0ouef(%3b2^ve(%1ntxxz1qdh*xg11d-%g')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
+DEBUG = False  # Turn off debug for production
+
+# --- ALLOWED_HOSTS for PythonAnywhere ---
+ALLOWED_HOSTS = ['kavindarajapaksha99.pythonanywhere.com', 'www.kavindarajapaksha99.pythonanywhere.com']
+
 
 # --- ALLOWED_HOSTS for Render.com ---
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
@@ -55,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'chatbot_project.urls'
